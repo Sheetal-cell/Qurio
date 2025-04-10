@@ -1,11 +1,13 @@
+/* Base styling */
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     background-color: #f0f8ff;
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    min-height: 100vh;
     margin: 0;
+    padding: 20px;
   }
   
   .container {
@@ -14,7 +16,7 @@ body {
     border-radius: 15px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     text-align: center;
-    width: 90%;
+    width: 100%;
     max-width: 600px;
   }
   
@@ -35,11 +37,8 @@ body {
     font-size: 16px;
     border-radius: 8px;
     border: 1px solid #aaa;
-  }
-  
-  select {
-    max-height: 200px;
-    overflow-y: auto;
+    width: 100%;
+    box-sizing: border-box;
   }
   
   button {
@@ -48,7 +47,7 @@ body {
     border: none;
     cursor: pointer;
     transition: 0.2s ease;
-    margin: 5px;
+    margin: 5px 0;
   }
   
   button:hover {
@@ -74,5 +73,55 @@ body {
   
   .actions {
     margin-top: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+  }
+  
+  #another-btn-container {
+    margin-top: 10px;
+  }
+  
+  /* Responsive Media Queries */
+  
+  /* Medium screens (tablets) */
+  @media (max-width: 768px) {
+    .container {
+      padding: 20px;
+    }
+  
+    #quote {
+      font-size: 18px;
+    }
+  
+    input, select, button {
+      font-size: 15px;
+    }
+  }
+  
+  /* Small screens (phones) */
+  @media (max-width: 480px) {
+    h1 {
+      font-size: 20px;
+    }
+  
+    .container {
+      padding: 15px;
+    }
+  
+    #quote {
+      font-size: 16px;
+    }
+  
+    input, select, button {
+      font-size: 14px;
+      padding: 8px;
+    }
+  
+    .actions {
+      flex-direction: column;
+      align-items: stretch;
+    }
   }
   
