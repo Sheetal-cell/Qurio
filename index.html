@@ -3,12 +3,20 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Quote Generator</title>
+  <title>Qurio</title>
+  <link rel="icon" href="Qurio-logo.jpg" type="image/x-icon">
+  <link rel="icon" href="Qurio-logo.jpg" type="image/png">
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
   <div class="container">
-    <h1>Get a Quote by Category</h1>
+    <header class="logo-container">
+        <img src="Qurio-logo.jpg" alt="Qurio Logo" class="logo" />
+        <h1>Qurio</h1>
+        <p class="tagline">Let your curiosity echo in quotes.</p>
+    </header>
+      
+
 
     <div class="search-container">
       <input type="text" id="searchInput" placeholder="Search category..." onkeyup="filterCategories()" />
@@ -34,7 +42,10 @@
     </div>
   </div>
 
+  
+
   <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
   <script src="script.js"></script>
 </body>
+
 </html>
