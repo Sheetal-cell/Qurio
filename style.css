@@ -1,0 +1,61 @@
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(to right, #ff7e5f, #feb47b);
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.quote-container {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    max-width: 400px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+h1 {
+    font-size: 22px;
+}
+
+p {
+    font-size: 18px;
+    margin: 20px 0;
+}
+
+button {
+    padding: 10px 15px;
+    border: none;
+    background: #007BFF;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #0056b3;
+}
+
+a {
+    padding: 10px;
+    text-decoration: none;
+    background: #1DA1F2;
+    color: white;
+    border-radius: 5px;
+    display: inline-block;
+}
+
+a:hover {
+    background: #0d8bf0;
+}
+
+#copyMessage {
+    color: green;
+    font-size: 14px;
+    margin-top: 5px;
+    display: none;
+}
