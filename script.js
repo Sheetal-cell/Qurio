@@ -1,9 +1,10 @@
-// Load categories on DOM load
+// Load categories on page load
 document.addEventListener("DOMContentLoaded", fetchCategories);
 
 // Fetch all available quote categories (tags)
 async function fetchCategories() {
   try {
+    console.log("Fetching categories...");
     const response = await fetch("https://api.quotable.io/tags");
     const tags = await response.json();
     const select = document.getElementById("category");
@@ -17,10 +18,20 @@ async function fetchCategories() {
   } catch (error) {
     console.error("Error fetching tags:", error);
     const select = document.getElementById("category");
-    const fallbackOption = document.createElement("option");
-    fallbackOption.textContent = "Failed to load categories";
-    fallbackOption.disabled = true;
-    select.appendChild(fallbackOption);
+
+    // Fallback categories
+    const fallbackTags = ["inspirational", "life", "wisdom", "love"];
+    fallbackTags.forEach(tag => {
+      const option = document.createElement("option");
+      option.value = tag;
+      option.textContent = tag.charAt(0).toUpperCase() + tag.slice(1);
+      select.appendChild(option);
+    });
+
+    const fallback = document.createElement("option");
+    fallback.disabled = true;
+    fallback.textContent = "⚠ Failed to load all categories";
+    select.appendChild(fallback);
   }
 }
 
