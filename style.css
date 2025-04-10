@@ -166,19 +166,4 @@ body {
     }
   }
   
-  .footer {
-    margin-top: auto;
-    text-align: center;
-    padding: 3px;
-    background-color: #111; /* You can choose any color */
-    color: white;
-    font-size: 0.9rem;
-    opacity: 0.5;
-    bottom: 0;
-    width: 100%;
-  }
   
-  .footer p {
-    margin: 0;
-    color: #eee;
-  }
