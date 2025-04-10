@@ -1,5 +1,5 @@
-// Load categories on page load
-window.onload = fetchCategories;
+// Load categories on DOM load
+document.addEventListener("DOMContentLoaded", fetchCategories);
 
 // Fetch all available quote categories (tags)
 async function fetchCategories() {
@@ -16,6 +16,11 @@ async function fetchCategories() {
     });
   } catch (error) {
     console.error("Error fetching tags:", error);
+    const select = document.getElementById("category");
+    const fallbackOption = document.createElement("option");
+    fallbackOption.textContent = "Failed to load categories";
+    fallbackOption.disabled = true;
+    select.appendChild(fallbackOption);
   }
 }
 
