@@ -1,106 +1,79 @@
-// Load categories on page load
-document.addEventListener("DOMContentLoaded", fetchCategories);
-
-// Fetch all available quote categories (tags)
-async function fetchCategories() {
-  try {
-    console.log("Fetching categories...");
-    const response = await fetch("https://api.quotable.io/tags");
-    const tags = await response.json();
-    const select = document.getElementById("category");
-
-    tags.forEach(tag => {
-      const option = document.createElement("option");
-      option.value = tag.name;
-      option.textContent = tag.name.charAt(0).toUpperCase() + tag.name.slice(1);
-      select.appendChild(option);
-    });
-  } catch (error) {
-    console.error("Error fetching tags:", error);
-    const select = document.getElementById("category");
-
-    // Fallback categories
-    const fallbackTags = ["inspirational", "life", "wisdom", "love"];
-    fallbackTags.forEach(tag => {
-      const option = document.createElement("option");
-      option.value = tag;
-      option.textContent = tag.charAt(0).toUpperCase() + tag.slice(1);
-      select.appendChild(option);
-    });
-
-    const fallback = document.createElement("option");
-    fallback.disabled = true;
-    fallback.textContent = "⚠ Failed to load all categories";
-    select.appendChild(fallback);
+// Fetch a quote by category (tag) from ZenQuotes API
+function fetchQuoteByCategory(category) {
+    const url = `https://zenquotes.io/api/quotes?tag=${category}`;
+  
+    fetch(url)
+      .then(response => response.json())
+      .then(data => {
+        console.log('API Response:', data); // Debugging step: log the API response
+        if (data && data.length > 0) {
+          const quote = data[0].q;  // The quote text
+          const author = data[0].a; // The author of the quote
+  
+          // Display the quote and author
+          document.getElementById('quoteText').textContent = `"${quote}"`;
+          document.getElementById('quoteAuthor').textContent = `— ${author}`;
+        } else {
+          // Handle empty response
+          document.getElementById('quoteText').textContent = "No quotes available for this category.";
+          document.getElementById('quoteAuthor').textContent = "";
+        }
+      })
+      .catch(error => {
+        console.error('Error fetching quote by category:', error);
+        document.getElementById('quoteText').textContent = "Error fetching quote.";
+        document.getElementById('quoteAuthor').textContent = "";
+      });
   }
-}
-
-// Filter dropdown based on search input
-function filterCategories() {
-  const input = document.getElementById("searchInput").value.toLowerCase();
-  const options = document.getElementById("category").options;
-
-  for (let i = 0; i < options.length; i++) {
-    const txt = options[i].text.toLowerCase();
-    options[i].style.display = txt.includes(input) ? "" : "none";
-  }
-}
-
-// Get first quote
-async function getQuote() {
-  const category = document.getElementById("category").value;
-  await fetchAndDisplayQuote(category);
-  document.getElementById("another-btn-container").style.display = "block";
-}
-
-// Get another quote with same category
-async function getAnotherQuote() {
-  const category = document.getElementById("category").value;
-  await fetchAndDisplayQuote(category);
-}
-
-// Fetch quote and display it
-async function fetchAndDisplayQuote(category) {
-  const url = category ? `https://api.quotable.io/random?tags=${category}` : `https://api.quotable.io/random`;
-
-  try {
-    const response = await fetch(url);
-    const data = await response.json();
-
-    document.getElementById("quote").innerText = `"${data.content}"`;
-    document.getElementById("author").innerText = `— ${data.author}`;
-  } catch (error) {
-    document.getElementById("quote").innerText = "Could not fetch quote.";
-    document.getElementById("author").innerText = "";
-  }
-}
-
-// Copy quote to clipboard
-function copyQuote() {
-  const quote = document.getElementById("quote").innerText;
-  const author = document.getElementById("author").innerText;
-  navigator.clipboard.writeText(`${quote}\n${author}`)
-    .then(() => alert("Quote copied to clipboard!"))
-    .catch(() => alert("Failed to copy quote."));
-}
-
-// Share quote on Twitter
-function shareQuote() {
-  const quote = document.getElementById("quote").innerText;
-  const author = document.getElementById("author").innerText;
-  const tweet = `${quote} ${author}`;
-  const twitterUrl = `https://twitter.com/intent/tweet?text=${encodeURIComponent(tweet)}`;
-  window.open(twitterUrl, '_blank');
-}
-
-// Download quote as styled image
-function downloadQuote() {
-  const quoteBox = document.getElementById("quote-box");
-
-  html2canvas(quoteBox).then(canvas => {
-    const link = document.createElement("a");
-    link.download = "quote.png";
-    link.href = canvas.toDataURL();
+  
+  // Event listener to fetch a quote when the "Get Another Quote" button is clicked
+  document.getElementById('getQuoteButton').addEventListener('click', () => {
+    const category = document.getElementById('categorySelect').value; // Get the selected category
+    fetchQuoteByCategory(category); // Fetch the quote based on the selected category
+  });
+  
+  // Event listener for the "Copy Quote" button
+  document.getElementById('copyQuoteButton').addEventListener('click', () => {
+    const quoteText = document.getElementById('quoteText').textContent;
+    navigator.clipboard.writeText(quoteText)
+      .then(() => alert('Quote copied to clipboard!'))
+      .catch(err => console.error('Error copying quote:', err));
+  });
+  
+  // Event listener for the "Share Quote" button (opens the share dialog)
+  document.getElementById('shareQuoteButton').addEventListener('click', () => {
+    const quoteText = document.getElementById('quoteText').textContent;
+    const quoteAuthor = document.getElementById('quoteAuthor').textContent;
+    const shareText = `"${quoteText}" ${quoteAuthor}`;
+  
+    // Check if the Web Share API is supported
+    if (navigator.share) {
+      navigator.share({
+        title: 'Inspirational Quote',
+        text: shareText,
+        url: window.location.href
+      })
+      .then(() => console.log('Quote shared successfully'))
+      .catch(err => console.error('Error sharing quote:', err));
+    } else {
+      // Fallback for browsers that don't support the Web Share API
+      alert("Web Share API is not supported in your browser. You can manually copy or share the quote.");
+    }
+  });
+  
+  // Event listener for the "Download Quote" button (downloads as text file)
+  document.getElementById('downloadQuoteButton').addEventListener('click', () => {
+    const quoteText = document.getElementById('quoteText').textContent;
+    const authorText = document.getElementById('quoteAuthor').textContent;
+    const quoteContent = `${quoteText}\n\n${authorText}`;
+  
+    const blob = new Blob([quoteContent], { type: 'text/plain' });
+    const link = document.createElement('a');
+    link.href = URL.createObjectURL(blob);
+    link.download = 'quote.txt';
     link.click();
   });
-}
+  
+  // Initial fetch of a random quote on page load
+  document.addEventListener('DOMContentLoaded', () => fetchQuoteByCategory('inspire'));
+  
