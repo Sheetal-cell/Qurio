@@ -9,19 +9,19 @@ body {
 }
 
 #header {
-  margin-bottom: 30px;
+  margin-bottom: 10px;
 }
 
 #logo {
   max-width: 100px;
   height: auto;
-  margin-bottom: 10px;
+  margin-bottom: 3px;
 }
 
 h1 {
   font-size: 2.5rem;
   color: #4b0082;
-  margin-bottom: 5px;
+  margin-bottom: 2px;
 }
 
 #tagline {
@@ -100,25 +100,68 @@ h1 {
 }
 
 
-/* New quote buttons */
+/* Styling for the Quote Buttons */
 #quote-buttons {
   margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px; /* Space between buttons */
 }
 
 #quote-buttons button {
-  padding: 12px 22px;
-  margin: 10px 8px;
-  font-size: 1rem;
+  padding: 14px 25px;
+  font-size: 1.1rem;
   border: none;
   border-radius: 8px;
   cursor: pointer;
-  background-color: #20b2aa;
   color: #fff;
-  transition: background-color 0.3s ease;
+  background-color: #20b2aa;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  width: 80%; /* Makes buttons responsive */
 }
 
 #quote-buttons button:hover {
-  background-color: #008b8b;
+  background-color: #008b8b; /* Slight change on hover */
+  transform: scale(1.05); /* Slightly increase size on hover */
+}
+
+#quote-buttons button:active {
+  transform: scale(0.98); /* Button shrinks when clicked */
+}
+
+/* Styling for the "More quote on selected theme" button */
+#new-quote-btn {
+  padding: 14px 25px;
+  font-size: 1.1rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  color: #fff;
+  background-color: #ab89ff;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  width: 80%; /* Makes buttons responsive *//* Purple color */
+}
+
+#new-quote-btn:hover {
+  background-color: #483d8b; /* Darker purple on hover */
+}
+
+/* Styling for the "More Random Quote" button */
+#random-btn-bottom {
+  padding: 14px 25px;
+  font-size: 1.1rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  color: #fff;
+  background-color: #ab89ff;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  width: 80%; /* Makes buttons responsive *//* Purple color */
+}
+
+#random-btn-bottom:hover {
+  background-color: #5d00ff; /* Darker orange on hover */
 }
 
 /* Responsive Styles */
