@@ -57,29 +57,33 @@ h1 {
 
 
 
-/* Quote display */
 #quote-display {
-  background-color: #ffffff;
-  border: 2px solid #ddd;
-  border-radius: 10px;
-  padding: 25px;
+  background: linear-gradient(135deg, #fdfbfb 0%, #ebedee 100%);
+  border: 2px solid #ccc;
+  border-radius: 15px;
+  padding: 30px;
   margin: 20px auto;
   max-width: 600px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+  color: #333;
+  text-align: center;
+  font-family: 'Georgia', serif;
+  position: relative;
 }
 
 #quote {
-  font-size: 1.4rem;
+  font-size: 1.6rem;
   font-style: italic;
-  margin-bottom: 15px;
-  color: #333;
+  margin-bottom: 20px;
+  color: #4b0082;
 }
 
 #author {
-  font-size: 1rem;
+  font-size: 1.1rem;
   font-weight: bold;
   color: #555;
 }
+
 
 /* New quote buttons */
 #quote-buttons {
@@ -154,4 +158,23 @@ h1 {
   #quote-display {
     padding: 18px;
   }
+}
+#quote-actions {
+  margin-top: 20px;
+}
+
+#quote-actions button {
+  padding: 10px 16px;
+  margin: 6px;
+  font-size: 0.95rem;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  background-color: #ffa500;
+  color: #fff;
+  transition: background-color 0.3s ease;
+}
+
+#quote-actions button:hover {
+  background-color: #ff8c00;
 }

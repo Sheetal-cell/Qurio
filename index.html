@@ -52,11 +52,22 @@
   <div id="quote-display">
     <p id="quote">Your quote will appear here.</p>
     <p id="author"></p>
+    
+    
+  </div>
+  <div id="quote-actions">
+    <button onclick="copyQuote()">Copy</button>
+    <button onclick="shareOnTwitter()">Share on X</button>
+
+    <button onclick="downloadQuoteAsImage()">Download Quote as Image</button>
+
   </div>
 
   <!-- option to Get New Quote -->
   <button id="new-quote-btn">More quote on selected theme</button>
   <button id="random-btn-bottom">More Random Quote</button>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
 
   <script src="script.js"></script>
 </body>

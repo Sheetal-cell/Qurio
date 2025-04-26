@@ -39,7 +39,7 @@ async function getCategoryQuote(category) {
       const randomIndex = Math.floor(Math.random() * quotesArray.length);
       const randomQuote = quotesArray[randomIndex];
       quoteElement.textContent = `"${randomQuote}"`;
-      authorElement.textContent = `- Category: (${category})`;
+      authorElement.textContent = "";
     } else {
       quoteElement.textContent = "No quotes found for this category.";
       authorElement.textContent = "";
@@ -86,3 +86,30 @@ newQuoteButton.addEventListener("click", () => {
 
 // Initial random quote on page load
 window.onload = getRandomQuote;
+
+function copyQuote() {
+  const text = document.getElementById("quote").textContent + " — " + document.getElementById("author").textContent;
+  navigator.clipboard.writeText(text)
+    .then(() => alert("Quote copied to clipboard!"))
+    .catch(() => alert("Failed to copy quote."));
+}
+
+function shareOnTwitter() {
+  const quoteText = document.getElementById("quote").innerText;
+  const authorText = document.getElementById("author").innerText;
+
+  const tweet = `"${quoteText}" — ${authorText}`;
+  const twitterUrl = `https://twitter.com/intent/tweet?text=${encodeURIComponent(tweet)}`;
+
+  window.open(twitterUrl, "_blank");
+}
+function downloadQuoteAsImage() {
+  const quoteDisplay = document.getElementById("quote-display");
+
+  html2canvas(quoteDisplay).then(canvas => {
+    const link = document.createElement("a");
+    link.download = "quote.png";
+    link.href = canvas.toDataURL("image/png");
+    link.click();
+  });
+}
