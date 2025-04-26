@@ -1,67 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-
-  <title>Qurio</title>
-  <link rel="icon" href="Qurio-logo.jpg" type="image/x-icon">
-  <link rel="icon" href="Qurio-logo.jpg" type="image/png">
-  <link rel="stylesheet" href="style.css" />
-  
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random Quote Generator</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div class="container">
-    <header class="logo-container">
-        <img src="Qurio-logo.jpg" alt="Qurio Logo" class="logo" />
-        <h1>Qurio</h1>
-        <p class="tagline">Let your curiosity echo in quotes.</p>
-    </header>
-   
-    <div>
-        <label for="categorySelect">Choose a Category:</label>
-        <select id="categorySelect">
-          <!-- Categories will be dynamically added here -->
-          <option value="inspire">Inspire</option>
-          <option value="life">Life</option>
-          <option value="love">Love</option>
-          <option value="art">Art</option>
-          <option value="students">Students</option>
-          <option value="sports">Sports</option>
-          <option value="funny">Funny</option>
-          <option value="book">Book</option>
-          <option value="god">God</option>
-          <option value="happiness">Happiness</option>
-          <option value="leadership">Leadership</option>
-          <option value="friendship">Friendship</option>
-          <option value="wisdom">Wisdom</option>
-          <option value="motivational">Motivational</option>
-        </select>
-      </div>
-    
-      <!-- Quote Text and Author -->
-      <div>
-        <p id="quoteText">"This is where your quote will appear."</p>
-        <p id="quoteAuthor">— Author</p>
-      </div>
-    
-      <!-- Action Buttons -->
-      <div>
-        <button id="getQuoteButton">Get Another Quote</button>
-        <button id="copyQuoteButton">Copy Quote</button>
-        <button id="shareQuoteButton">Share Quote</button>
-        <button id="downloadQuoteButton">Download Quote</button>
-      </div>
-    
-  <footer class="footer">
-    👉🏻 Made by: <strong>Sheetal Bajaj</strong> 🙂🤞
-  </footer>
-
-  <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
-  
-      <!-- Add the JavaScript -->
-  <script src="script.js"></script>
-  
+    <div class="container">
+        <div id="quote-box">
+            <p id="quote">"Click the button to get a random quote!"</p>
+            <p id="author">- Author</p>
+            <button id="new-quote-btn">New Quote</button>
+        </div>
+    </div>
+    <script src="script.js"></script>
 </body>
-
 </html>

@@ -1,188 +1,49 @@
-/* Base styling */
+/* style.css */
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: #f0f8ff;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    margin: 0;
-    padding: 20px;
-    flex-direction: column;
-  }
-  .logo-container {
-    text-align: center;
-    margin-top: 20px;
-  }
-  
-  .logo {
-    max-width: 150px;
-    width: 15%;
-    height: auto;
-    margin-bottom: 10px;
-    border-radius: 20%;
-  }
-  
-  /* Responsive handling */
-  @media screen and (max-width: 768px) {
-    .logo {
-      width: 25%;
-    }
-  }
-  
-  @media screen and (max-width: 480px) {
-    .logo {
-      width: 25%;
-    }
-  }
-  
-  
-  .container {
-    background: white;
-    padding: 30px;
-    border-radius: 15px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    text-align: center;
-    width: 100%;
-    max-width: 600px;
-  }
-  
-  h1 {
-    margin-bottom: 20px;
-    color: #333;
-  }
-  .tagline {
-    font-size: 1.2rem;
-    color: #555;
-    font-style: italic;
-    margin-top: -10px;
-    margin-bottom: 20px;
-    animation: fadeIn 1s ease-in;
-  }
-  
-  /* Optional fade-in animation */
-  @keyframes fadeIn {
-    from { opacity: 0; transform: translateY(10px); }
-    to { opacity: 1; transform: translateY(0); }
-  }
-  
-  
-  .search-container {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    margin-bottom: 15px;
-  }
-  
-  input, select, button {
-    padding: 10px;
-    font-size: 16px;
-    border-radius: 8px;
-    border: 1px solid #aaa;
-    width: 100%;
-    box-sizing: border-box;
-  }
-  
-  button {
-    background-color: #4CAF50;
-    color: white;
-    border: none;
-    cursor: pointer;
-    transition: 0.2s ease;
-    margin: 5px 0;
-  }
-  
-  button:hover {
-    background-color: #45a049;
-  }
-  
-  #quote-box {
-    margin-top: 20px;
-    background: #e0f7fa;
-    padding: 20px;
-    border-radius: 12px;
-  }
-  
-  #quote {
-    font-style: italic;
-    font-size: 20px;
-  }
-  
-  #author {
-    margin-top: 10px;
-    color: #555;
-  }
-  
-  .actions {
-    margin-top: 20px;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 10px;
-  }
-  
-  #another-btn-container {
-    margin-top: 10px;
-  }
-  
-  /* Responsive Media Queries */
-  
-  /* Medium screens (tablets) */
-  @media (max-width: 768px) {
-    .container {
-      padding: 20px;
-    }
-  
-    #quote {
-      font-size: 18px;
-    }
-  
-    input, select, button {
-      font-size: 15px;
-    }
-  }
-  
-  /* Small screens (phones) */
-  @media (max-width: 480px) {
-    h1 {
-      font-size: 20px;
-    }
-  
-    .container {
-      padding: 15px;
-    }
-  
-    #quote {
-      font-size: 16px;
-    }
-  
-    input, select, button {
-      font-size: 14px;
-      padding: 8px;
-    }
-  
-    .actions {
-      flex-direction: column;
-      align-items: stretch;
-    }
-  }
-  
-  /* Footer styling */
-.footer {
-    text-align: center;
-    font-size: 14px;
-    color: white;
-    background: rgba(0, 0, 0, 0.2);
-    padding: 10px 0;
-    border-radius: 5px;
-    width: 100%;
-    top:2px;
-  }
-  
-  /* Responsive footer */
-  @media screen and (max-width: 480px) {
-    .footer {
-      font-size: 0.9rem;
-      padding: 12px 5px;
-    }
-  }
+  font-family: Arial, sans-serif;
+  background-color: #f0f0f0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+}
+
+.container {
+  text-align: center;
+  background-color: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+#quote-box {
+  font-size: 1.5em;
+}
+
+#quote {
+  font-style: italic;
+  color: #333;
+}
+
+#author {
+  margin-top: 10px;
+  font-weight: bold;
+  color: #555;
+}
+
+button {
+  margin-top: 20px;
+  padding: 10px 20px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  font-size: 1.2em;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #45a049;
+}
