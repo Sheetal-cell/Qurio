@@ -1,8 +1,9 @@
 /* Base styling */
 body {
   font-family: 'Segoe UI', sans-serif;
-  background-color: #f7f9fc;
-  color: #333;
+  background: radial-gradient( #fff1c1, #fbd786, #f7797d);
+
+  color: #612c2d;
   text-align: center;
   padding: 20px;
   margin: 0;
@@ -13,20 +14,26 @@ body {
 }
 
 #logo {
-  max-width: 100px;
+  max-width: 150px;
   height: auto;
   margin-bottom: 3px;
+  border-radius: 20%;
 }
 
 h1 {
   font-size: 2.5rem;
-  color: #4b0082;
+  color: #612c2d;
   margin-bottom: 2px;
+ 
+  font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  
 }
 
 #tagline {
-  font-size: 1.2rem;
-  color: #555;
+  font-size: 1.9rem;
+  font-style: italic;
+  color: #612c2d;
+  font-weight: 475;
 }
 
 /* Quote options buttons */
@@ -38,16 +45,17 @@ h1 {
   padding: 12px 20px;
   margin: 8px;
   font-size: 1rem;
+  font-weight: bold;
   border: none;
   border-radius: 8px;
   cursor: pointer;
-  background-color: #6a5acd;
-  color: #fff;
+  background: linear-gradient(to left,#f7797d , #fbd786);
+  color: #454545;
   transition: background-color 0.3s ease;
 }
 
 #quote-options button:hover {
-  background-color: #483d8b;
+  background: linear-gradient(to left,#f7797d , #fbd786,#fff1c1 );
 }
 
 #category-section {
@@ -60,9 +68,11 @@ h1 {
 #category-dropdown {
   padding: 10px 15px;
   font-size: 1rem;
+  font-weight: bold;
+  color: #333;
   border-radius: 6px;
   border: 1px solid #ccc;
-  background-color: #ab89ff;
+  background-color: #ffd36e;
   max-width: 350px;
   width: 70%;
   box-sizing: border-box;
@@ -73,13 +83,15 @@ h1 {
 
 
 #quote-display {
-  background: linear-gradient(135deg, #fdfbfb 0%, #ebedee 100%);
+  background: radial-gradient( #fff1c1, #fbd786, #f7797d);
+
+
   border: 2px solid #ccc;
   border-radius: 15px;
   padding: 30px;
   margin: 20px auto;
   max-width: 600px;
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
   color: #333;
   text-align: center;
   font-family: 'Georgia', serif;
@@ -90,7 +102,7 @@ h1 {
   font-size: 1.6rem;
   font-style: italic;
   margin-bottom: 20px;
-  color: #4b0082;
+  color: #612c2d;
 }
 
 #author {
@@ -115,15 +127,17 @@ h1 {
   border: none;
   border-radius: 8px;
   cursor: pointer;
-  color: #fff;
-  background-color: #20b2aa;
+  color: #555;
+  background: linear-gradient(to left,#f7797d , #fbd786 );
   transition: background-color 0.3s ease, transform 0.2s ease;
   width: 80%; /* Makes buttons responsive */
+  font-weight: bold;
 }
 
 #quote-buttons button:hover {
-  background-color: #008b8b; /* Slight change on hover */
+  background: linear-gradient(to left,#f7797d , #fbd786,#fff1c1 ); /* Slight change on hover */
   transform: scale(1.05); /* Slightly increase size on hover */
+  font-weight: bold;
 }
 
 #quote-buttons button:active {
@@ -134,17 +148,18 @@ h1 {
 #new-quote-btn {
   padding: 14px 25px;
   font-size: 1.1rem;
-  border: none;
+  border:#171717;
   border-radius: 8px;
   cursor: pointer;
-  color: #fff;
-  background-color: #ab89ff;
+  color: #323232;
+  background: linear-gradient(to left,#f7797d , #fbd786 );
   transition: background-color 0.3s ease, transform 0.2s ease;
   width: 80%; /* Makes buttons responsive *//* Purple color */
+  font-weight: bold;
 }
 
 #new-quote-btn:hover {
-  background-color: #483d8b; /* Darker purple on hover */
+  background: linear-gradient(to left,#f7797d , #fbd786,#fff1c1 );
 }
 
 /* Styling for the "More Random Quote" button */
@@ -154,15 +169,16 @@ h1 {
   border: none;
   border-radius: 8px;
   cursor: pointer;
-  color: #fff;
-  background-color: #ab89ff;
+  color: #303030;
+  background: linear-gradient(to left,#f7797d , #fbd786 );
   transition: background-color 0.3s ease, transform 0.2s ease;
   width: 80%; /* Makes buttons responsive *//* Purple color */
   margin: 2px;
+  font-weight: bold;
 }
 
 #random-btn-bottom:hover {
-  background-color: #5d00ff; /* Darker orange on hover */
+  background: linear-gradient(to left,#f7797d , #fbd786,#fff1c1 ); /* Darker orange on hover */
 }
 
 /* Responsive Styles */
@@ -186,7 +202,7 @@ h1 {
     padding: 20px;
   }
   #logo {
-    max-width: 80px;
+    max-width: 140px;
   }
   #footer {
     font-size: 0.9rem;
@@ -224,7 +240,7 @@ h1 {
     padding: 18px;
   }
   #logo {
-    max-width: 70px;
+    max-width: 100px;
   }
   #footer {
     font-size: 0.85rem;
@@ -238,25 +254,28 @@ h1 {
   padding: 10px 16px;
   margin: 6px;
   font-size: 0.95rem;
-  border: none;
+  border:#333;
   border-radius: 6px;
   cursor: pointer;
-  background-color: #ffa500;
-  color: #fff;
+  background-color: #ffd36e;
+  color: #3f3f3f;
+  font-weight: bold;
   transition: background-color 0.3s ease;
+  box-shadow: #333;
 }
 
 #quote-actions button:hover {
-  background-color: #ff8c00;
+  background-color: #fff1c1;
 }
 /* Footer Section */
 #footer {
   margin-top: 40px;
   padding: 10px;
   font-size: 1rem;
-  color: #777;
-  background-color: #f1f1f1;
+  color: #612c2d;
+  background: linear-gradient(to left,#f7797d , #fbd786,#fff1c1 );
   border-top: 2px solid #ddd;
+  font-weight: bold;
 }
 
 #footer p {
