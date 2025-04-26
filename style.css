@@ -158,6 +158,7 @@ h1 {
   background-color: #ab89ff;
   transition: background-color 0.3s ease, transform 0.2s ease;
   width: 80%; /* Makes buttons responsive *//* Purple color */
+  margin: 2px;
 }
 
 #random-btn-bottom:hover {
