@@ -141,6 +141,12 @@ h1 {
   #quote-display {
     padding: 20px;
   }
+  #logo {
+    max-width: 80px;
+  }
+  #footer {
+    font-size: 0.9rem;
+  }
 }
 
 @media screen and (max-width: 480px) {
@@ -173,6 +179,12 @@ h1 {
   #quote-display {
     padding: 18px;
   }
+  #logo {
+    max-width: 70px;
+  }
+  #footer {
+    font-size: 0.85rem;
+  }
 }
 #quote-actions {
   margin-top: 20px;
@@ -192,4 +204,17 @@ h1 {
 
 #quote-actions button:hover {
   background-color: #ff8c00;
+}
+/* Footer Section */
+#footer {
+  margin-top: 40px;
+  padding: 10px;
+  font-size: 1rem;
+  color: #777;
+  background-color: #f1f1f1;
+  border-top: 2px solid #ddd;
+}
+
+#footer p {
+  margin: 0;
 }
