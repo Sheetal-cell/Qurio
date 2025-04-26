@@ -3,7 +3,8 @@ const categoryDropdown = document.getElementById("category-dropdown");
 const quoteElement = document.getElementById("quote");
 const authorElement = document.getElementById("author");
 const newQuoteButton = document.getElementById("new-quote-btn");
-const randomButton = document.getElementById("random-btn");
+const randomButtonTop = document.getElementById("random-btn-top");
+const randomButtonBottom = document.getElementById("random-btn-bottom");
 const categoryButton = document.getElementById("category-btn");
 const categorySection = document.getElementById("category-section");
 
@@ -38,7 +39,7 @@ async function getCategoryQuote(category) {
       const randomIndex = Math.floor(Math.random() * quotesArray.length);
       const randomQuote = quotesArray[randomIndex];
       quoteElement.textContent = `"${randomQuote}"`;
-      authorElement.textContent = `- Local Quote (${category})`;
+      authorElement.textContent = `- Category: (${category})`;
     } else {
       quoteElement.textContent = "No quotes found for this category.";
       authorElement.textContent = "";
@@ -50,16 +51,14 @@ async function getCategoryQuote(category) {
   }
 }
 
-// Event listener for random quote button
-randomButton.addEventListener("click", () => {
-  selectedCategory = ""; // Reset category
-  categorySection.style.display = "none"; // Hide category dropdown
-  getRandomQuote(); // Show random quote
-});
+
+// attach the same function to both buttons
+randomButtonTop.addEventListener("click", getRandomQuote);
+randomButtonBottom.addEventListener("click", getRandomQuote);
 
 // Event listener for category button to show category dropdown
 categoryButton.addEventListener("click", () => {
-  categorySection.style.display = "block"; // Show category dropdown
+  categorySection.style.display = "block";
 });
 
 // Event listener for category selection change

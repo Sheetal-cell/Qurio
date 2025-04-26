@@ -10,14 +10,14 @@
   <h1>Quote Generator</h1>
 
   <div id="quote-options">
-    <button id="random-btn">Random Quote</button>
-    <button id="category-btn">Category</button>
+    <button id="random-btn-top">Random Quote</button>
+    <button id="category-btn" >Category</button>
   </div>
   
   
 
   <!-- options for categories (hidden initially) -->
-  <div id="category-section" ></div> 
+  <div id="category-section" style="display: none; margin: 1rem 0;">
   <select id="category-dropdown">
     <option value="" disabled selected>Select a Category</option>
     <option  value="Motivation">💪 Motivation</option>
@@ -55,7 +55,8 @@
   </div>
 
   <!-- option to Get New Quote -->
-  <button id="new-quote-btn">New Quote</button>
+  <button id="new-quote-btn">More quote on selected theme</button>
+  <button id="random-btn-bottom">More Random Quote</button>
 
   <script src="script.js"></script>
 </body>
