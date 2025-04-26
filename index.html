@@ -1,19 +1,62 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Random Quote Generator</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <title>Quote Generator</title>
 </head>
 <body>
-    <div class="container">
-        <div id="quote-box">
-            <p id="quote">"Click the button to get a random quote!"</p>
-            <p id="author">- Author</p>
-            <button id="new-quote-btn">New Quote</button>
-        </div>
-    </div>
-    <script src="script.js"></script>
+  <h1>Quote Generator</h1>
+
+  <div id="quote-options">
+    <button id="random-btn">Random Quote</button>
+    <button id="category-btn">Category</button>
+  </div>
+  
+  
+
+  <!-- options for categories (hidden initially) -->
+  <div id="category-section" ></div> 
+  <select id="category-dropdown">
+    <option value="" disabled selected>Select a Category</option>
+    <option  value="Motivation">💪 Motivation</option>
+    <option  value="Love">❤️ Love</option>
+    <option  value="Life">🌱 Life</option>
+    <option  value="Success">🏆 Success</option>
+    <option  value="Friendship">👯‍♀️ Friendship</option>
+    <option  value="Wisdom">🧠 Wisdom</option>
+    <option  value="Happiness">😊 Happiness</option>
+    <option  value="Courage">🦁 Courage</option>
+    <option  value="Kindness">🤝 Kindness</option>
+    <option  value="Time">⏳ Time</option>
+    <option  value="Patience">🐢 Patience</option>
+    <option  value="Change">🔄 Change</option>
+    <option  value="Dreams">💭 Dreams</option>
+    <option  value="Positivity">🌞 Positivity</option>
+    <option  value="Leadership">👑 Leadership</option>
+    <option  value="Learning">📚 Learning</option>
+    <option  value="Adventure">🌍 Adventure</option>
+    <option  value="Hope">🌟 Hope</option>
+    <option  value="Strength">💪 Strength</option>
+    <option  value="Faith">🙏 Faith</option>
+    <option  value="Freedom">🕊️ Freedom</option>
+    <option  value="Mindfulness">🧘‍♀️ Mindfulness</option>
+    <option  value="Gratitude">🙏 Gratitude</option>
+    <option  value="Humor">😂 Humor</option>
+    <option  value="Creativity">🎨 Creativity</option>
+    </select>
+  </div>
+
+  <!-- Quote Display Section -->
+  <div id="quote-display">
+    <p id="quote">Your quote will appear here.</p>
+    <p id="author"></p>
+  </div>
+
+  <!-- option to Get New Quote -->
+  <button id="new-quote-btn">New Quote</button>
+
+  <script src="script.js"></script>
 </body>
 </html>

@@ -1,49 +1,39 @@
-/* style.css */
+/* Basic styling */
 body {
   font-family: Arial, sans-serif;
-  background-color: #f0f0f0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  margin: 0;
-}
-
-.container {
-  text-align: center;
-  background-color: white;
   padding: 20px;
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
 }
 
-#quote-box {
-  font-size: 1.5em;
+#quote-display {
+  margin-top: 20px;
 }
 
 #quote {
-  font-style: italic;
-  color: #333;
+  font-size: 24px;
+  font-weight: bold;
 }
 
 #author {
-  margin-top: 10px;
-  font-weight: bold;
-  color: #555;
+  font-size: 18px;
+  color: gray;
 }
 
-button {
-  margin-top: 20px;
+#quote-options button {
   padding: 10px 20px;
-  background-color: #4CAF50;
-  color: white;
-  border: none;
-  font-size: 1.2em;
-  border-radius: 5px;
+  font-size: 16px;
+  margin: 5px;
   cursor: pointer;
-  transition: background-color 0.3s ease;
 }
 
-button:hover {
-  background-color: #45a049;
+#category-dropdown {
+  margin-top: 20px;
+  padding: 10px;
+  font-size: 16px;
+}
+
+#new-quote-btn {
+  margin-top: 20px;
+  padding: 10px;
+  font-size: 16px;
 }
