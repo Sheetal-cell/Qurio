@@ -1,40 +1,157 @@
-/* Basic styling */
+/* Base styling */
 body {
-  font-family: Arial, sans-serif;
-  padding: 20px;
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #f7f9fc;
+  color: #333;
   text-align: center;
+  padding: 20px;
+  margin: 0;
 }
 
-#quote-display {
-  margin-top: 20px;
+h1 {
+  font-size: 2.5rem;
+  color: #4b0082;
+  margin-bottom: 30px;
 }
 
-#quote {
-  font-size: 24px;
-  font-weight: bold;
-}
-
-#author {
-  font-size: 18px;
-  color: gray;
+/* Quote options buttons */
+#quote-options {
+  margin-bottom: 20px;
 }
 
 #quote-options button {
-  padding: 10px 20px;
-  font-size: 16px;
-  margin: 5px;
+  padding: 12px 20px;
+  margin: 8px;
+  font-size: 1rem;
+  border: none;
+  border-radius: 8px;
   cursor: pointer;
+  background-color: #6a5acd;
+  color: #fff;
+  transition: background-color 0.3s ease;
+}
+
+#quote-options button:hover {
+  background-color: #483d8b;
+}
+
+#category-section {
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: center;
+  max-height: 50px;
 }
 
 #category-dropdown {
-  margin-top: 20px;
-  padding: 10px;
-  font-size: 16px;
+  padding: 10px 15px;
+  font-size: 1rem;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  background-color: #ab89ff;
+  max-width: 350px;
+  width: 70%;
+  box-sizing: border-box;
+  max-height: 50px; /* Adjust this value if needed */
+  overflow-y:auto;  /* This makes the dropdown scrollable vertically */
 }
 
-#new-quote-btn {
-  margin-top: 20px;
-  padding: 10px;
-  font-size: 16px;
+
+
+/* Quote display */
+#quote-display {
+  background-color: #ffffff;
+  border: 2px solid #ddd;
+  border-radius: 10px;
+  padding: 25px;
+  margin: 20px auto;
+  max-width: 600px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
+#quote {
+  font-size: 1.4rem;
+  font-style: italic;
+  margin-bottom: 15px;
+  color: #333;
+}
+
+#author {
+  font-size: 1rem;
+  font-weight: bold;
+  color: #555;
+}
+
+/* New quote buttons */
+#quote-buttons {
+  margin-top: 20px;
+}
+
+#quote-buttons button {
+  padding: 12px 22px;
+  margin: 10px 8px;
+  font-size: 1rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  background-color: #20b2aa;
+  color: #fff;
+  transition: background-color 0.3s ease;
+}
+
+#quote-buttons button:hover {
+  background-color: #008b8b;
+}
+
+/* Responsive Styles */
+@media screen and (max-width: 768px) {
+  h1 {
+    font-size: 2rem;
+  }
+
+  #quote {
+    font-size: 1.2rem;
+  }
+
+  #quote-options button,
+  #quote-buttons button,
+  #category-dropdown {
+    font-size: 0.95rem;
+    padding: 10px 18px;
+  }
+
+  #quote-display {
+    padding: 20px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  h1 {
+    font-size: 1.8rem;
+  }
+
+  #quote {
+    font-size: 1.1rem;
+  }
+
+  #quote-options,
+  #quote-buttons {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  #quote-options button,
+  #quote-buttons button {
+    margin: 10px 0;
+    width: 90%;
+  }
+
+  #category-dropdown {
+    font-size: 0.95rem;
+  }
+  
+
+  #quote-display {
+    padding: 18px;
+  }
+}
