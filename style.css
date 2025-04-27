@@ -53,6 +53,7 @@ h1 {
   background: linear-gradient(to left,#f7797d , #fbd786);
   color: #454545;
   transition: background-color 0.3s ease;
+  border-top: 2px solid #ddd;
 }
 
 #quote-options button:hover {
@@ -66,6 +67,7 @@ h1 {
   max-height: 50px;
 }
 
+/* Styling for the category dropdown */
 #category-dropdown {
   padding: 10px 15px;
   font-size: 1rem;
@@ -73,12 +75,16 @@ h1 {
   color: #333;
   border-radius: 6px;
   border: 1px solid #ccc;
-  background-color: #ffd36e;
+  background-color: #ffd778;
+  transition: background 0.3s ease, transform 0.2s ease;
   max-width: 350px;
   width: 70%;
   box-sizing: border-box;
   max-height: 50px; /* Adjust this value if needed */
-  overflow-y:auto;  /* This makes the dropdown scrollable vertically */
+  overflow-y: auto; /* Makes the dropdown scrollable vertically */
+  font-style: italic;
+  
+
 }
 
 
@@ -120,6 +126,7 @@ h1 {
   flex-direction: column;
   align-items: center;
   gap: 12px; /* Space between buttons */
+  border-top: 2px solid #ddd;
 }
 
 #quote-buttons button {
@@ -133,6 +140,7 @@ h1 {
   transition: background-color 0.3s ease, transform 0.2s ease;
   width: 80%; /* Makes buttons responsive */
   font-weight: bold;
+  border-top: 2px solid #ddd;
 }
 
 #quote-buttons button:hover {
@@ -158,6 +166,7 @@ h1 {
   max-width: 350px;
   width: 70%;
   font-weight: bold;
+  border-top: 2px solid #949494;
 }
 
 #new-quote-btn:hover {
@@ -184,7 +193,33 @@ h1 {
   background: linear-gradient(to left,#f7797d , #fbd786,#fff1c1 ); /* Darker orange on hover */
 }
 
-/* Responsive Styles */
+/* Styling for the "More Random Quote" button */
+#random-btn-top {
+  padding: 14px 25px;
+  font-size: 1.1rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  color: #303030;
+  background-color: #ff7f7f !important; /* Ensure the color applies */
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  max-width: 350px;
+  width: 70%;
+  margin: 2px;
+  font-weight: bold;
+}
+
+#random-btn-top:hover {
+  background-color: #ffb3b3 !important; /* Lighter color on hover */
+}
+
+/* Additional for specificity */
+#random-btn-top:focus {
+  outline: none;
+  background-color: #ff7f7f !important;
+}
+
+
 @media screen and (max-width: 768px) {
   h1 {
     font-size: 2rem;
@@ -265,6 +300,7 @@ h1 {
   font-weight: bold;
   transition: background-color 0.3s ease;
   box-shadow: #333;
+  border-top: 2px solid #ddd;
 }
 
 #quote-actions button:hover {
