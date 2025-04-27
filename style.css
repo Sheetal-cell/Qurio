@@ -39,6 +39,7 @@ h1 {
 /* Quote options buttons */
 #quote-options {
   margin-bottom: 10px;
+  
 }
 
 #quote-options button {
@@ -154,7 +155,8 @@ h1 {
   color: #323232;
   background: linear-gradient(to left,#f7797d , #fbd786 );
   transition: background-color 0.3s ease, transform 0.2s ease;
-  width: 80%; /* Makes buttons responsive *//* Purple color */
+  max-width: 350px;
+  width: 70%;
   font-weight: bold;
 }
 
@@ -172,7 +174,8 @@ h1 {
   color: #303030;
   background: linear-gradient(to left,#f7797d , #fbd786 );
   transition: background-color 0.3s ease, transform 0.2s ease;
-  width: 80%; /* Makes buttons responsive *//* Purple color */
+  max-width: 350px;
+  width: 70%;
   margin: 2px;
   font-weight: bold;
 }

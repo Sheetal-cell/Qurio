@@ -5,8 +5,7 @@ const authorElement = document.getElementById("author");
 const newQuoteButton = document.getElementById("new-quote-btn");
 const randomButtonTop = document.getElementById("random-btn-top");
 const randomButtonBottom = document.getElementById("random-btn-bottom");
-const categoryButton = document.getElementById("category-btn");
-const categorySection = document.getElementById("category-section");
+
 
 const apiURL = "https://quoteslate.vercel.app/api/quotes/random";
 
@@ -33,6 +32,8 @@ async function getCategoryQuote(category) {
   try {
     const response = await fetch("quotes.json");
     const data = await response.json();
+    
+    // Check if the category exists in the JSON and retrieve a random quote from it
     const quotesArray = data[category];
 
     if (quotesArray && quotesArray.length > 0) {
@@ -51,15 +52,9 @@ async function getCategoryQuote(category) {
   }
 }
 
-
-// attach the same function to both buttons
+// Attach the same function to both random quote buttons
 randomButtonTop.addEventListener("click", getRandomQuote);
 randomButtonBottom.addEventListener("click", getRandomQuote);
-
-// Event listener for category button to show category dropdown
-categoryButton.addEventListener("click", () => {
-  categorySection.style.display = "block";
-});
 
 // Event listener for category selection change
 categoryDropdown.addEventListener("change", (event) => {
@@ -71,7 +66,6 @@ categoryDropdown.addEventListener("change", (event) => {
     authorElement.textContent = "";
   }
 });
-
 // Handle New Quote button click
 newQuoteButton.addEventListener("click", () => {
   if (selectedCategory) {
