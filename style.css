@@ -1,20 +1,39 @@
+
 /* Base styling */
 body {
   font-family: 'Segoe UI', sans-serif;
-  background: radial-gradient( #fff1c1, #fbd786, #f7797d);
+  background: linear-gradient(135deg,#fff1c1, #fbd786,#f7797d  );
 
   color: #612c2d;
   text-align: center;
   padding: 20px;
   margin: 0;
+  display: flex;
+  flex-direction: column; /* Stack content vertically */
+  min-height: 100vh; /* Ensure the body takes at least the full viewport height */
+}
+.main-content {
+  flex: 1; /* Allow this section to take all available space */
+}
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background: linear-gradient(135deg,#fff1c1, #fbd786,#f7797d );
+  color: white;
 }
 
+.navbar-left h1 {
+  margin: 0;
+  font-size: 24px;
+}
 #header {
   margin-bottom: 10px;
 }
 
 #logo {
-  max-width: 150px;
+  max-width: 100px;
   height: auto;
   margin-bottom: 3px;
   border-radius: 20%;
@@ -48,17 +67,17 @@ h1 {
   font-size: 1rem;
   font-weight: bold;
   border: none;
-  border-radius: 8px;
+  border-radius: 4px;
   cursor: pointer;
-  background: linear-gradient(to left,#f7797d , #fbd786);
+  background-color: #ffd36e;
   color: #454545;
   transition: background-color 0.3s ease;
-  border-top: 2px solid #ddd;
-  border-radius: 26px;
+  border-top: 2px solid #989898;
+  border-radius: 4px;
 }
 
 #quote-options button:hover {
-  background: linear-gradient(to left,#f7797d , #fbd786,#fff1c1 );
+  background-color: #fff1c1;
 }
 
 #category-section {
@@ -74,8 +93,8 @@ h1 {
   font-size: 1rem;
   font-weight: bold;
   color: #333;
-  border-radius: 26px;
-  border: 1px solid #ccc;
+  border-radius: 4px;
+  border-top: 2px solid #989898;
   background-color: #ffd778;
   transition: background 0.3s ease, transform 0.2s ease;
   max-width: 350px;
@@ -95,7 +114,7 @@ h1 {
 
 
   border: 2px solid #ccc;
-  border-radius: 55px;
+  border-radius: 40px;
   padding: 30px;
   margin: 20px auto;
   max-width: 600px;
@@ -134,10 +153,10 @@ h1 {
   padding: 14px 25px;
   font-size: 1.1rem;
   border: none;
-  border-radius: 8px;
+  border-radius: 4px;
   cursor: pointer;
   color: #555;
-  background: linear-gradient(to left,#f7797d , #fbd786 );
+  background-color: #ffd778;
   transition: background-color 0.3s ease, transform 0.2s ease;
   width: 80%; /* Makes buttons responsive */
   font-weight: bold;
@@ -145,7 +164,7 @@ h1 {
 }
 
 #quote-buttons button:hover {
-  background: linear-gradient(to left,#f7797d , #fbd786,#fff1c1 ); /* Slight change on hover */
+  background-color: #fff1c1;/* Slight change on hover */
   transform: scale(1.05); /* Slightly increase size on hover */
   font-weight: bold;
 }
@@ -159,10 +178,10 @@ h1 {
   padding: 14px 25px;
   font-size: 1.1rem;
   border:#171717;
-  border-radius: 8px;
+  border-radius: 4px;
   cursor: pointer;
   color: #323232;
-  background: linear-gradient(to left,#f7797d , #fbd786 );
+  background-color: #ffd778;
   transition: background-color 0.3s ease, transform 0.2s ease;
   max-width: 350px;
   width: 70%;
@@ -171,7 +190,7 @@ h1 {
 }
 
 #new-quote-btn:hover {
-  background: linear-gradient(to left,#f7797d , #fbd786,#fff1c1 );
+  background-color: #fff1c1;
 }
 
 /* Styling for the "More Random Quote" button */
@@ -179,10 +198,10 @@ h1 {
   padding: 14px 25px;
   font-size: 1.1rem;
   border: none;
-  border-radius: 8px;
+  border-radius: 4px;
   cursor: pointer;
   color: #303030;
-  background: linear-gradient(to left,#f7797d , #fbd786 );
+  background-color: #ffd778;
   transition: background-color 0.3s ease, transform 0.2s ease;
   max-width: 350px;
   width: 70%;
@@ -191,7 +210,7 @@ h1 {
 }
 
 #random-btn-bottom:hover {
-  background: linear-gradient(to left,#f7797d , #fbd786,#fff1c1 ); /* Darker orange on hover */
+  background-color: #fff1c1; /* Darker orange on hover */
 }
 
 /* Styling for the "More Random Quote" button */
@@ -199,10 +218,10 @@ h1 {
   padding: 14px 25px;
   font-size: 1.1rem;
   border: none;
-  border-radius: 8px;
+  border-radius: 4px;
   cursor: pointer;
   color: #303030;
-  background-color: #ff7f7f !important; /* Ensure the color applies */
+  background-color: #ffd778; /* Ensure the color applies */
   transition: background-color 0.3s ease, transform 0.2s ease;
   max-width: 350px;
   width: 70%;
@@ -211,13 +230,13 @@ h1 {
 }
 
 #random-btn-top:hover {
-  background-color: #ffb3b3 !important; /* Lighter color on hover */
+  background-color: #fff1c1; /* Lighter color on hover */
 }
 
 /* Additional for specificity */
 #random-btn-top:focus {
   outline: none;
-  background-color: #ff7f7f !important;
+  background-color: #fff1c1;
 }
 
 
@@ -294,7 +313,7 @@ h1 {
   margin: 6px;
   font-size: 0.95rem;
   border:#333;
-  border-radius: 6px;
+  border-radius: 4px;
   cursor: pointer;
   background-color: #ffd36e;
   color: #3f3f3f;
@@ -302,7 +321,7 @@ h1 {
   transition: background-color 0.3s ease;
   box-shadow: #333;
   border-top: 2px solid #b6b6b6;
-  border-radius: 26px;
+  border-radius: 4px;
 }
 
 #quote-actions button:hover {
@@ -314,12 +333,27 @@ h1 {
   padding: 10px;
   font-size: 1rem;
   color: #612c2d;
-  background: linear-gradient(to left,#f7797d , #fbd786,#fff1c1 );
+  background: linear-gradient(135deg,#fff1c1, #fbd786,#f7797d );
   border-top: 2px solid #b6b6b6;
   font-weight: bold;
-  border-radius: 26px;
+  border-radius: 4px;
+  margin-top: auto; /* Ensures the footer is pushed to the bottom */
 }
 
 #footer p {
   margin: 0;
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+  .navbar {
+      flex-direction: column;
+      align-items: flex-start;
+  }
+}
+
+@media (max-width: 480px) {
+  .navbar-left h1 {
+      font-size: 20px;
+  }
 }
