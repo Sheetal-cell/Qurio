@@ -1,10 +1,9 @@
 
 /* Base styling */
 body {
-  font-family: 'Segoe UI', sans-serif;
-  background: linear-gradient(135deg,#fff1c1, #fbd786,#f7797d  );
-
-  color: #612c2d;
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(135deg, #f3e8ff, #fcd5ce);
+  color: #333;
   text-align: center;
   padding: 20px;
   margin: 0;
@@ -20,7 +19,7 @@ body {
   justify-content: space-between;
   align-items: center;
   padding: 10px 20px;
-  background: linear-gradient(135deg,#fff1c1, #fbd786,#f7797d );
+  background: linear-gradient(135deg, #fff1c1, #fbd786, #f7797d);
   color: white;
 }
 
@@ -40,24 +39,54 @@ body {
 }
 
 h1 {
-  font-size: 2.5rem;
-  color: #612c2d;
-  margin-bottom: 2px;
- 
-  font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  font-family: 'Playfair Display', serif;
+  font-size: 3.5rem;
+  color: #6A4C93;
+  letter-spacing: 2px;
   
+}
+header p {
+  font-size: 1.2rem;
+  color: #555;
+  margin-top: 0.5rem;
 }
 
 #tagline {
-  font-size: 1.9rem;
-  font-style: italic;
-  color: #612c2d;
-  font-weight: 475;
+  font-size: 1.3rem;
+  color: #333;
+  margin-bottom: 2rem;
 }
+
+/* Icon Row Styling */
+.icon-row {
+  margin-top: 1rem;
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.icon-row i {
+  font-size: 2.5rem;
+  color: #ffffff;
+  background: linear-gradient(135deg, #6A4C93, #FF6F61);
+  padding: 20px;
+  border-radius: 50%;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+}
+
+.icon-row i:hover {
+  transform: scale(1.15);
+  background: linear-gradient(135deg, #FF6F61, #6A4C93);
+  box-shadow: 0 6px 20px rgba(255, 111, 97, 0.6);
+}
+
+
 
 /* Quote options buttons */
 #quote-options {
   margin-bottom: 10px;
+  
   
 }
 
