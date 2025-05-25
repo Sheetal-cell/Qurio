@@ -5,40 +5,57 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <!-- Font Awesome for icons -->
   <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
-  <link rel="icon" href="Qurio-logo.jpg" type="image/x-icon">
-  <link rel="icon" href="Qurio-logo.jpg" type="image/png">
+  <link rel="icon" href="Qurio-logo.png" type="image/x-icon">
+  <link rel="icon" href="Qurio-logo.png" type="image/png">
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Roboto:wght@400;500;700&family=Playfair+Display:ital@1&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&family=Lora&family=Cormorant+Garamond&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Great+Vibes&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Raleway&display=swap" rel="stylesheet">
+
+
+
 
   <title>Qurio-Let your curiosity echo in quotes.</title>
 </head>
 <body>
   <!-- Logo Section -->
-  <header id="header">
-    <img src="Qurio-logo.jpg" alt="Qurio Logo" id="logo"> <!-- Replace logo.png with your logo image file -->
+<div class="quote-card">
+ 
+  
      <!-- Navbar -->
      <nav class="navbar">
       <div class="navbar-left">
-          <h1>Qurio</h1>
+        <header id="header"></header>
+        <img src="Qurio-logo.png" alt="Qurio Logo" id="logo">
+        <h2 id="tagline">"Let your curiosity echo in quotes."</h2>
+        
       </div>
-      </nav>
+    </header>
+    </nav>
+    <div>
+      
+      <p><h3>Discover inspiration or find the perfect phrase!</h3></p>
+    </div>
+    
       <div class="main-content">
-    <p id="tagline">"Let your curiosity echo in quotes."</p>
+      
     <div class="icon-row">
       <i class="fas fa-lightbulb" title="Inspire Me"></i>
       <i class="fas fa-star" title="Favorite Quotes"></i>
       <i class="fas fa-heart" title="Loved Ones"></i>
     </div>
     
-  </header>
+  
 
   <div id="quote-options">
-    <div id="random-buttons">
+    <div id="random-buttons" class="quote-row">
       <button id="random-btn-top">Random Quote</button>
       <button id="random-btn-bottom">More Random Quote</button>
     </div>
     
-  
+    <div class="quote-row" id="category-options">
     <select id="category-dropdown">
       <option value="" disabled selected>Select a Category</option>
       <option value="Motivation">💪 Motivation</option>
@@ -67,7 +84,7 @@
       <option value="Humor">😂 Humor</option>
       <option value="Creativity">🎨 Creativity</option>
     </select>
-    <button id="new-quote-btn">More quote on selected theme</button>
+    <button id="new-quote-btn">More quote on selected theme</button></div>
   </div>
   <!-- Quote Display Section -->
   <div id="quote-display">
@@ -85,7 +102,7 @@
   </div>
 
 </div>
-
+</div>
   <!-- Footer Section -->
   <footer id="footer">
     <p>❣ Thank You for visiting ❣</p>
@@ -95,5 +112,6 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
 
   <script src="script.js"></script>
+
 </body>
 </html>
