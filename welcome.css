@@ -1,0 +1,148 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  height: 100vh;
+  overflow: hidden;
+}
+
+.welcome-page {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backdrop-filter: blur(6px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  padding: 20px;
+}
+
+.welcome-card {
+  background: rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(8px);
+  padding: 60px;
+  border-radius: 20px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
+  text-align: center;
+  color: #fff;
+  max-width: 600px;
+  width: 100%;
+}
+
+.logo {
+  width: 100px;
+  margin-bottom: 20px;
+}
+
+.welcome-card h1 {
+  font-size: 60px;
+  margin-bottom: 20px;
+}
+
+.welcome-card p {
+  font-size: 18px;
+  margin-bottom: 30px;
+}
+
+.welcome-card button {
+  background: linear-gradient(to right, #ff512f, #dd2476);
+  border: none;
+  color: #fff;
+  font-size: 16px;
+  padding: 14px 28px;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.welcome-card button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+/* Floating quote icons */
+.welcome-page::before {
+  content: "❝";
+  position: absolute;
+  font-size: 150px;
+  color: rgba(255, 255, 255, 0.08);
+  top: 20%;
+  left: 10%;
+  animation: float 6s ease-in-out infinite;
+}
+
+.welcome-page::after {
+  content: "❞";
+  position: absolute;
+  font-size: 150px;
+  color: rgba(255, 255, 255, 0.08);
+  bottom: 20%;
+  right: 10%;
+  animation: float 5s ease-in-out infinite alternate;
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(20px);
+  }
+}
+
+/* 📱 Responsive Styles */
+@media (max-width: 768px) {
+  .welcome-card {
+    padding: 40px 30px;
+  }
+
+  .logo {
+    width: 80px;
+  }
+
+  .welcome-card h1 {
+    font-size: 42px;
+  }
+
+  .welcome-card p {
+    font-size: 16px;
+  }
+
+  .welcome-card button {
+    padding: 12px 24px;
+    font-size: 15px;
+  }
+
+  .welcome-page::before, .welcome-page::after {
+    font-size: 90px;
+  }
+}
+
+@media (max-width: 480px) {
+  .welcome-card {
+    padding: 30px 20px;
+  }
+
+  .logo {
+    width: 70px;
+  }
+
+  .welcome-card h1 {
+    font-size: 36px;
+  }
+
+  .welcome-card p {
+    font-size: 15px;
+  }
+
+  .welcome-card button {
+    padding: 12px 22px;
+    font-size: 14px;
+  }
+
+  .welcome-page::before, .welcome-page::after {
+    font-size: 70px;
+  }
+}
